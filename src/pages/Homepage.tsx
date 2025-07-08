@@ -12,7 +12,7 @@ const Homepage = () => {
       id: 1,
       name: "Ravi Kumar", 
       role: "Student Leader",
-      photo: "/api/placeholder/300/400",
+      photo: "/api/placeholder/100/100",
       message: "Building our village's future",
       icon: BookOpen
     },
@@ -20,7 +20,7 @@ const Homepage = () => {
       id: 2,
       name: "Priya Devi",
       role: "Cultural Ambassador", 
-      photo: "/api/placeholder/300/400",
+      photo: "/api/placeholder/100/100",
       message: "Preserving our traditions",
       icon: Palette
     },
@@ -28,7 +28,7 @@ const Homepage = () => {
       id: 3,
       name: "Arjun Reddy",
       role: "Sports Captain",
-      photo: "/api/placeholder/300/400", 
+      photo: "/api/placeholder/100/100", 
       message: "Leading with passion",
       icon: Trophy
     },
@@ -36,7 +36,7 @@ const Homepage = () => {
       id: 4,
       name: "Meera Lakshmi",
       role: "Environmental Advocate",
-      photo: "/api/placeholder/300/400",
+      photo: "/api/placeholder/100/100",
       message: "Green future champion",
       icon: Leaf
     },
@@ -44,7 +44,7 @@ const Homepage = () => {
       id: 5,
       name: "Kiran Chandra",
       role: "Tech Enthusiast",
-      photo: "/api/placeholder/300/400",
+      photo: "/api/placeholder/100/100",
       message: "Digital innovation pioneer",
       icon: Laptop
     },
@@ -52,9 +52,25 @@ const Homepage = () => {
       id: 6,
       name: "Divya Sree",
       role: "Community Volunteer",
-      photo: "/api/placeholder/300/400",
+      photo: "/api/placeholder/100/100",
       message: "Service before self",
       icon: HandHeart
+    },
+    {
+      id: 7,
+      name: "Suresh Babu",
+      role: "Youth Leader",
+      photo: "/api/placeholder/100/100",
+      message: "Inspiring change",
+      icon: Users
+    },
+    {
+      id: 8,
+      name: "Kavitha Rani",
+      role: "Art Teacher",
+      photo: "/api/placeholder/100/100",
+      message: "Creative minds",
+      icon: Palette
     }
   ];
 
@@ -161,84 +177,8 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* Village Youth Section */}
-        <div className="max-w-6xl mx-auto mb-16 animate-fade-in">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-amber-200">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 text-center">
-              Village Youth
-            </h2>
-            <p className="text-center text-amber-700 text-lg mb-8">
-              Meet the bright minds and passionate hearts shaping our village's tomorrow
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {villageYouth.map((youth, index) => {
-                const IconComponent = youth.icon;
-                return (
-                  <div
-                    key={youth.id}
-                    className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 border border-amber-200"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    {/* Photo */}
-                    <div className="aspect-[3/4] overflow-hidden relative">
-                      <img
-                        src={youth.photo}
-                        alt={youth.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      {/* Hover overlay with message */}
-                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                        <p className="text-sm font-medium italic">"{youth.message}"</p>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 space-y-3">
-                      <h3 className="text-xl font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300">
-                        {youth.name}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                        <span className="text-amber-700 font-medium text-sm group-hover:text-orange-600 transition-colors duration-300">
-                          {youth.role}
-                        </span>
-                        <IconComponent className="w-4 h-4 text-amber-600 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 ml-1" />
-                      </div>
-                      
-                      {/* Decorative element */}
-                      <div className="pt-2">
-                        <Heart className="w-4 h-4 text-red-400 group-hover:text-red-500 group-hover:scale-125 transition-all duration-300" />
-                      </div>
-                    </div>
-
-                    {/* Animated border */}
-                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-amber-400 via-orange-400 to-red-400 animate-pulse"></div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Call to action */}
-            <div className="text-center mt-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl">
-              <p className="text-amber-800 text-lg mb-4">
-                Are you a youth from our village? Join our community spotlight!
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 text-sm text-amber-600">
-                <span>• Share your story</span>
-                <span>• Inspire others</span>
-                <span>• Build connections</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Action Buttons */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto mb-16">
           <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
             <Button
               onClick={() => navigate('/upload')}
@@ -277,6 +217,63 @@ const Homepage = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
+          </div>
+        </div>
+
+        {/* Village Youth Section - Small Images in Row */}
+        <div className="max-w-6xl mx-auto mb-16 animate-fade-in">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200">
+            <h2 className="text-2xl md:text-3xl font-bold text-amber-900 mb-4 text-center">
+              Village Youth
+            </h2>
+            <p className="text-center text-amber-700 mb-8">
+              Meet the bright minds shaping our village's tomorrow
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {villageYouth.map((youth, index) => {
+                const IconComponent = youth.icon;
+                return (
+                  <div
+                    key={youth.id}
+                    className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-amber-200 w-24 sm:w-28"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    {/* Photo */}
+                    <div className="aspect-square overflow-hidden relative">
+                      <img
+                        src={youth.photo}
+                        alt={youth.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-2 text-center">
+                      <h3 className="text-xs font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300 truncate">
+                        {youth.name}
+                      </h3>
+                      <div className="flex items-center justify-center gap-1 mt-1">
+                        <IconComponent className="w-3 h-3 text-amber-600 group-hover:text-orange-500 transition-colors duration-300" />
+                        <Heart className="w-3 h-3 text-red-400 group-hover:text-red-500 transition-colors duration-300" />
+                      </div>
+                    </div>
+
+                    {/* Hover tooltip */}
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                      {youth.role}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+              <p className="text-amber-800 text-sm">
+                Young leaders building our village's bright future together ✨
+              </p>
+            </div>
           </div>
         </div>
 
