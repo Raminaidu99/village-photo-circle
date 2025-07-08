@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Upload, Image, Heart, MapPin, Users, Mountain } from "lucide-react";
+import { Upload, Image, Heart, MapPin, Users, Mountain, BookOpen, Palette, Trophy, Leaf, Laptop, HandHeart } from "lucide-react";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -12,42 +13,48 @@ const Homepage = () => {
       name: "Ravi Kumar", 
       role: "Student Leader",
       photo: "/api/placeholder/300/400",
-      message: "Building our village's future"
+      message: "Building our village's future",
+      icon: BookOpen
     },
     {
       id: 2,
       name: "Priya Devi",
       role: "Cultural Ambassador", 
       photo: "/api/placeholder/300/400",
-      message: "Preserving our traditions"
+      message: "Preserving our traditions",
+      icon: Palette
     },
     {
       id: 3,
       name: "Arjun Reddy",
       role: "Sports Captain",
       photo: "/api/placeholder/300/400", 
-      message: "Leading with passion"
+      message: "Leading with passion",
+      icon: Trophy
     },
     {
       id: 4,
       name: "Meera Lakshmi",
       role: "Environmental Advocate",
       photo: "/api/placeholder/300/400",
-      message: "Green future champion"
+      message: "Green future champion",
+      icon: Leaf
     },
     {
       id: 5,
       name: "Kiran Chandra",
       role: "Tech Enthusiast",
       photo: "/api/placeholder/300/400",
-      message: "Digital innovation pioneer"
+      message: "Digital innovation pioneer",
+      icon: Laptop
     },
     {
       id: 6,
       name: "Divya Sree",
       role: "Community Volunteer",
       photo: "/api/placeholder/300/400",
-      message: "Service before self"
+      message: "Service before self",
+      icon: HandHeart
     }
   ];
 
@@ -165,51 +172,55 @@ const Homepage = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {villageYouth.map((youth, index) => (
-                <div
-                  key={youth.id}
-                  className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 border border-amber-200"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {/* Photo */}
-                  <div className="aspect-[3/4] overflow-hidden relative">
-                    <img
-                      src={youth.photo}
-                      alt={youth.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    {/* Hover overlay with message */}
-                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                      <p className="text-sm font-medium italic">"{youth.message}"</p>
+              {villageYouth.map((youth, index) => {
+                const IconComponent = youth.icon;
+                return (
+                  <div
+                    key={youth.id}
+                    className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 border border-amber-200"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {/* Photo */}
+                    <div className="aspect-[3/4] overflow-hidden relative">
+                      <img
+                        src={youth.photo}
+                        alt={youth.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Hover overlay with message */}
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        <p className="text-sm font-medium italic">"{youth.message}"</p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-xl font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300">
-                      {youth.name}
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                      <span className="text-amber-700 font-medium text-sm group-hover:text-orange-600 transition-colors duration-300">
-                        {youth.role}
-                      </span>
+                    {/* Content */}
+                    <div className="p-6 space-y-3">
+                      <h3 className="text-xl font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300">
+                        {youth.name}
+                      </h3>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                        <span className="text-amber-700 font-medium text-sm group-hover:text-orange-600 transition-colors duration-300">
+                          {youth.role}
+                        </span>
+                        <IconComponent className="w-4 h-4 text-amber-600 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 ml-1" />
+                      </div>
+                      
+                      {/* Decorative element */}
+                      <div className="pt-2">
+                        <Heart className="w-4 h-4 text-red-400 group-hover:text-red-500 group-hover:scale-125 transition-all duration-300" />
+                      </div>
                     </div>
-                    
-                    {/* Decorative element */}
-                    <div className="pt-2">
-                      <Heart className="w-4 h-4 text-red-400 group-hover:text-red-500 group-hover:scale-125 transition-all duration-300" />
-                    </div>
-                  </div>
 
-                  {/* Animated border */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-amber-400 via-orange-400 to-red-400 animate-pulse"></div>
+                    {/* Animated border */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-amber-400 via-orange-400 to-red-400 animate-pulse"></div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Call to action */}
