@@ -1,10 +1,55 @@
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Upload, Image, Heart, MapPin, Users, Mountain } from "lucide-react";
 
 const Homepage = () => {
   const navigate = useNavigate();
+
+  // Mock youth data - in a real app, this would come from a database
+  const villageYouth = [
+    {
+      id: 1,
+      name: "Ravi Kumar", 
+      role: "Student Leader",
+      photo: "/api/placeholder/300/400",
+      message: "Building our village's future"
+    },
+    {
+      id: 2,
+      name: "Priya Devi",
+      role: "Cultural Ambassador", 
+      photo: "/api/placeholder/300/400",
+      message: "Preserving our traditions"
+    },
+    {
+      id: 3,
+      name: "Arjun Reddy",
+      role: "Sports Captain",
+      photo: "/api/placeholder/300/400", 
+      message: "Leading with passion"
+    },
+    {
+      id: 4,
+      name: "Meera Lakshmi",
+      role: "Environmental Advocate",
+      photo: "/api/placeholder/300/400",
+      message: "Green future champion"
+    },
+    {
+      id: 5,
+      name: "Kiran Chandra",
+      role: "Tech Enthusiast",
+      photo: "/api/placeholder/300/400",
+      message: "Digital innovation pioneer"
+    },
+    {
+      id: 6,
+      name: "Divya Sree",
+      role: "Community Volunteer",
+      photo: "/api/placeholder/300/400",
+      message: "Service before self"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
@@ -105,6 +150,78 @@ const Homepage = () => {
               <p className="text-center text-amber-800 text-lg italic">
                 "అనంతరాయుడుపేట - Where tradition meets tomorrow, and every sunset brings us closer together."
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Village Youth Section */}
+        <div className="max-w-6xl mx-auto mb-16 animate-fade-in">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-amber-200">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 text-center">
+              Village Youth
+            </h2>
+            <p className="text-center text-amber-700 text-lg mb-8">
+              Meet the bright minds and passionate hearts shaping our village's tomorrow
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {villageYouth.map((youth, index) => (
+                <div
+                  key={youth.id}
+                  className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 border border-amber-200"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {/* Photo */}
+                  <div className="aspect-[3/4] overflow-hidden relative">
+                    <img
+                      src={youth.photo}
+                      alt={youth.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Hover overlay with message */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      <p className="text-sm font-medium italic">"{youth.message}"</p>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300">
+                      {youth.name}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                      <span className="text-amber-700 font-medium text-sm group-hover:text-orange-600 transition-colors duration-300">
+                        {youth.role}
+                      </span>
+                    </div>
+                    
+                    {/* Decorative element */}
+                    <div className="pt-2">
+                      <Heart className="w-4 h-4 text-red-400 group-hover:text-red-500 group-hover:scale-125 transition-all duration-300" />
+                    </div>
+                  </div>
+
+                  {/* Animated border */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-amber-400 via-orange-400 to-red-400 animate-pulse"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Call to action */}
+            <div className="text-center mt-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl">
+              <p className="text-amber-800 text-lg mb-4">
+                Are you a youth from our village? Join our community spotlight!
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 text-sm text-amber-600">
+                <span>• Share your story</span>
+                <span>• Inspire others</span>
+                <span>• Build connections</span>
+              </div>
             </div>
           </div>
         </div>
