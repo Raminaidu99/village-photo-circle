@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Upload, Image, Heart, MapPin, Users, Mountain } from "lucide-react";
@@ -365,55 +366,69 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* Village Youth Section - Small Images in Grid */}
-        <div className="max-w-6xl mx-auto mb-16 animate-fade-in">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200">
-            <h2 className="text-2xl md:text-3xl font-bold text-amber-900 mb-4 text-center">
+        {/* Village Youth Section - Larger Images in Grid */}
+        <div className="max-w-7xl mx-auto mb-16 animate-fade-in">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-amber-300">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6 text-center">
               Village Youth
             </h2>
-            <p className="text-center text-amber-700 mb-8">
+            <p className="text-center text-amber-700 mb-8 text-lg">
               Meet the bright minds shaping our village's tomorrow
             </p>
             
-            <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
               {villageYouth.map((youth, index) => (
                 <div
                   key={youth.id}
-                  className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-amber-200"
-                  style={{ animationDelay: `${index * 20}ms` }}
+                  className="group relative bg-gradient-to-br from-white via-amber-50 to-orange-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-2 border-amber-200 hover:border-orange-300"
+                  style={{ animationDelay: `${index * 30}ms` }}
                 >
                   {/* Photo */}
                   <div className="aspect-square overflow-hidden relative">
                     <img
                       src={youth.photo}
                       alt={youth.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-1 text-center">
-                    <h3 className="text-xs font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300 truncate">
-                      {youth.name}
-                    </h3>
-                    <div className="flex items-center justify-center mt-1">
-                      <Heart className="w-2 h-2 text-red-400 group-hover:text-red-500 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Floating heart */}
+                    <div className="absolute top-3 right-3 bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100 shadow-lg">
+                      <Heart className="w-4 h-4 text-red-500 fill-current" />
+                    </div>
+                    
+                    {/* Name overlay on hover */}
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="font-bold text-sm truncate">{youth.name}</h3>
+                      <p className="text-xs opacity-90 truncate">{youth.role}</p>
                     </div>
                   </div>
 
-                  {/* Hover tooltip */}
-                  <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                    {youth.role}
+                  {/* Content */}
+                  <div className="p-4 text-center">
+                    <h3 className="text-sm font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300 truncate mb-1">
+                      {youth.name}
+                    </h3>
+                    <p className="text-xs text-amber-700 truncate opacity-80">
+                      {youth.role}
+                    </p>
                   </div>
+
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 left-0 w-0 h-0 border-l-[20px] border-l-amber-400 border-t-[20px] border-t-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
-              <p className="text-amber-800 text-sm">
+            <div className="text-center mt-8 p-6 bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl border border-amber-200">
+              <p className="text-amber-800 text-lg font-medium">
                 Young leaders building our village's bright future together ✨
               </p>
+              <div className="flex justify-center items-center gap-2 mt-3">
+                <Heart className="w-5 h-5 text-red-500 fill-current animate-pulse" />
+                <span className="text-amber-700 text-sm">Unidos por el progreso</span>
+                <Heart className="w-5 h-5 text-red-500 fill-current animate-pulse" />
+              </div>
             </div>
           </div>
         </div>
