@@ -1,76 +1,221 @@
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Upload, Image, Heart, MapPin, Users, Mountain, BookOpen, Palette, Trophy, Leaf, Laptop, HandHeart } from "lucide-react";
+import { Upload, Image, Heart, MapPin, Users, Mountain } from "lucide-react";
 
 const Homepage = () => {
   const navigate = useNavigate();
 
-  // Mock youth data - in a real app, this would come from a database
+  // Mock youth data - expanded to ~30 entries
   const villageYouth = [
     {
       id: 1,
       name: "Ravi Kumar", 
       role: "Student Leader",
       photo: "/api/placeholder/100/100",
-      message: "Building our village's future",
-      icon: BookOpen
+      message: "Building our village's future"
     },
     {
       id: 2,
       name: "Priya Devi",
       role: "Cultural Ambassador", 
       photo: "/api/placeholder/100/100",
-      message: "Preserving our traditions",
-      icon: Palette
+      message: "Preserving our traditions"
     },
     {
       id: 3,
       name: "Arjun Reddy",
       role: "Sports Captain",
       photo: "/api/placeholder/100/100", 
-      message: "Leading with passion",
-      icon: Trophy
+      message: "Leading with passion"
     },
     {
       id: 4,
       name: "Meera Lakshmi",
       role: "Environmental Advocate",
       photo: "/api/placeholder/100/100",
-      message: "Green future champion",
-      icon: Leaf
+      message: "Green future champion"
     },
     {
       id: 5,
       name: "Kiran Chandra",
       role: "Tech Enthusiast",
       photo: "/api/placeholder/100/100",
-      message: "Digital innovation pioneer",
-      icon: Laptop
+      message: "Digital innovation pioneer"
     },
     {
       id: 6,
       name: "Divya Sree",
       role: "Community Volunteer",
       photo: "/api/placeholder/100/100",
-      message: "Service before self",
-      icon: HandHeart
+      message: "Service before self"
     },
     {
       id: 7,
       name: "Suresh Babu",
       role: "Youth Leader",
       photo: "/api/placeholder/100/100",
-      message: "Inspiring change",
-      icon: Users
+      message: "Inspiring change"
     },
     {
       id: 8,
       name: "Kavitha Rani",
       role: "Art Teacher",
       photo: "/api/placeholder/100/100",
-      message: "Creative minds",
-      icon: Palette
+      message: "Creative minds"
+    },
+    {
+      id: 9,
+      name: "Rahul Sharma",
+      role: "Agriculture Student",
+      photo: "/api/placeholder/100/100",
+      message: "Future farmer"
+    },
+    {
+      id: 10,
+      name: "Anjali Patel",
+      role: "Health Worker",
+      photo: "/api/placeholder/100/100",
+      message: "Community wellness"
+    },
+    {
+      id: 11,
+      name: "Vikram Singh",
+      role: "Mechanic",
+      photo: "/api/placeholder/100/100",
+      message: "Fixing tomorrow"
+    },
+    {
+      id: 12,
+      name: "Pooja Gupta",
+      role: "Teacher",
+      photo: "/api/placeholder/100/100",
+      message: "Educating minds"
+    },
+    {
+      id: 13,
+      name: "Anil Kumar",
+      role: "Shopkeeper",
+      photo: "/api/placeholder/100/100",
+      message: "Serving community"
+    },
+    {
+      id: 14,
+      name: "Sunita Devi",
+      role: "Nurse",
+      photo: "/api/placeholder/100/100",
+      message: "Caring hearts"
+    },
+    {
+      id: 15,
+      name: "Rajesh Yadav",
+      role: "Driver",
+      photo: "/api/placeholder/100/100",
+      message: "Safe journeys"
+    },
+    {
+      id: 16,
+      name: "Lakshmi Prasad",
+      role: "Cook",
+      photo: "/api/placeholder/100/100",
+      message: "Nourishing souls"
+    },
+    {
+      id: 17,
+      name: "Gopal Krishna",
+      role: "Farmer",
+      photo: "/api/placeholder/100/100",
+      message: "Growing hope"
+    },
+    {
+      id: 18,
+      name: "Sita Ramesh",
+      role: "Tailor",
+      photo: "/api/placeholder/100/100",
+      message: "Weaving dreams"
+    },
+    {
+      id: 19,
+      name: "Harish Reddy",
+      role: "Electrician",
+      photo: "/api/placeholder/100/100",
+      message: "Lighting lives"
+    },
+    {
+      id: 20,
+      name: "Deepika Rao",
+      role: "Student",
+      photo: "/api/placeholder/100/100",
+      message: "Learning always"
+    },
+    {
+      id: 21,
+      name: "Mohan Lal",
+      role: "Carpenter",
+      photo: "/api/placeholder/100/100",
+      message: "Building homes"
+    },
+    {
+      id: 22,
+      name: "Radha Krishna",
+      role: "Dancer",
+      photo: "/api/placeholder/100/100",
+      message: "Cultural pride"
+    },
+    {
+      id: 23,
+      name: "Sandeep Kumar",
+      role: "Musician",
+      photo: "/api/placeholder/100/100",
+      message: "Melodic moments"
+    },
+    {
+      id: 24,
+      name: "Geetha Sharma",
+      role: "Midwife",
+      photo: "/api/placeholder/100/100",
+      message: "New beginnings"
+    },
+    {
+      id: 25,
+      name: "Prakash Reddy",
+      role: "Barber",
+      photo: "/api/placeholder/100/100",
+      message: "Style and care"
+    },
+    {
+      id: 26,
+      name: "Kamala Devi",
+      role: "Elder",
+      photo: "/api/placeholder/100/100",
+      message: "Wisdom keeper"
+    },
+    {
+      id: 27,
+      name: "Naresh Babu",
+      role: "Postman",
+      photo: "/api/placeholder/100/100",
+      message: "Connecting hearts"
+    },
+    {
+      id: 28,
+      name: "Shanti Kumari",
+      role: "Cleaner",
+      photo: "/api/placeholder/100/100",
+      message: "Clean village"
+    },
+    {
+      id: 29,
+      name: "Ramu Yadav",
+      role: "Watchman",
+      photo: "/api/placeholder/100/100",
+      message: "Guardian angel"
+    },
+    {
+      id: 30,
+      name: "Bharti Devi",
+      role: "Helper",
+      photo: "/api/placeholder/100/100",
+      message: "Always helping"
     }
   ];
 
@@ -220,7 +365,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* Village Youth Section - Small Images in Row */}
+        {/* Village Youth Section - Small Images in Grid */}
         <div className="max-w-6xl mx-auto mb-16 animate-fade-in">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200">
             <h2 className="text-2xl md:text-3xl font-bold text-amber-900 mb-4 text-center">
@@ -230,43 +375,39 @@ const Homepage = () => {
               Meet the bright minds shaping our village's tomorrow
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4">
-              {villageYouth.map((youth, index) => {
-                const IconComponent = youth.icon;
-                return (
-                  <div
-                    key={youth.id}
-                    className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-amber-200 w-24 sm:w-28"
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    {/* Photo */}
-                    <div className="aspect-square overflow-hidden relative">
-                      <img
-                        src={youth.photo}
-                        alt={youth.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
+            <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-3">
+              {villageYouth.map((youth, index) => (
+                <div
+                  key={youth.id}
+                  className="group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-amber-200"
+                  style={{ animationDelay: `${index * 20}ms` }}
+                >
+                  {/* Photo */}
+                  <div className="aspect-square overflow-hidden relative">
+                    <img
+                      src={youth.photo}
+                      alt={youth.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
 
-                    {/* Content */}
-                    <div className="p-2 text-center">
-                      <h3 className="text-xs font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300 truncate">
-                        {youth.name}
-                      </h3>
-                      <div className="flex items-center justify-center gap-1 mt-1">
-                        <IconComponent className="w-3 h-3 text-amber-600 group-hover:text-orange-500 transition-colors duration-300" />
-                        <Heart className="w-3 h-3 text-red-400 group-hover:text-red-500 transition-colors duration-300" />
-                      </div>
-                    </div>
-
-                    {/* Hover tooltip */}
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                      {youth.role}
+                  {/* Content */}
+                  <div className="p-1 text-center">
+                    <h3 className="text-xs font-bold text-amber-900 group-hover:text-orange-600 transition-colors duration-300 truncate">
+                      {youth.name}
+                    </h3>
+                    <div className="flex items-center justify-center mt-1">
+                      <Heart className="w-2 h-2 text-red-400 group-hover:text-red-500 transition-colors duration-300" />
                     </div>
                   </div>
-                );
-              })}
+
+                  {/* Hover tooltip */}
+                  <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                    {youth.role}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="text-center mt-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
