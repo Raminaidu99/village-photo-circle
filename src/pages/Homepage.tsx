@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Upload, Image, Heart, MapPin, Users, Mountain } from "lucide-react";
-import VillageYouth from "@/components/VillageYouth";
+import Youth from "@/components/youth";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -153,8 +152,8 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* Village Youth Section - Now using separate component */}
-        <VillageYouth />
+        {/* Village Youth Section - Now using Youth component */}
+        <Youth />
 
         {/* Footer */}
         <footer className="text-center mt-16 animate-fade-in">
